@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Interactive Product Inventory & Analytics Dashboard</h1>
+
+  <div class="inventory-container">
+    <h2>Add Product</h2>
+    <input id="productName" type="text" placeholder="Enter product name">
+    <input id="productPrice" type="number" placeholder="Enter product price">
+    <button onclick="addProduct()">Add Product</button>
+
+    <h2>Set Category Thresholds</h2>
+    <input id="budgetLimit" type="number" placeholder="Budget limit (e.g. 50)">
+    <input id="standardLimit" type="number" placeholder="Standard limit (e.g. 300)">
+    <button onclick="updateThresholds()">Update Thresholds</button>
+
+    <div class="dashboard">
+      <div class="card">
+        <h2>Inventory Roster</h2>
+        <table id="inventoryTable">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Financial Analytics</h2>
+        <table id="analyticsTable">
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="dashboard">
+      <div class="card">
+        <h2>Category Distribution</h2>
+        <canvas id="categoryChart"></canvas>
+      </div>
+      <div class="card">
+        <h2>Product Prices</h2>
+        <canvas id="priceChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
